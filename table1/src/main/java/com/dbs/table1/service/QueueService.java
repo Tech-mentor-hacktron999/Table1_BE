@@ -2,9 +2,7 @@ package com.dbs.table1.service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.SynchronousQueue;
 
-import com.dbs.table1.model.Message;
 import com.dbs.table1.model.Queue;
 
 public class QueueService {
@@ -20,7 +18,7 @@ public class QueueService {
 	
 	public boolean deleteQueue(String id)
 	{
-		queues.remove(queue);
+		queues.remove(id);
 		return true;
 		
 	}

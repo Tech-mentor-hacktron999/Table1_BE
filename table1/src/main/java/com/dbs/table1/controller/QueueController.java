@@ -15,18 +15,18 @@ import com.dbs.table1.service.QueueService;
 @RestController
 public class QueueController {
 
-@Autowired
-private QueueService queueService;
+	@Autowired
+	private QueueService queueService;
 
-@GetMapping("queue/")
-public List<Queue> getAllQueues(){
-	List<Queue> list = queueService.getAllQueues();
-	return list;
-}
+	@GetMapping("queue/")
+	public List<Queue> getAllQueues() {
+		List<Queue> list = queueService.getAllQueues();
+		return list;
+	}
 
-@DeleteMapping("queue/{id}")
-public void deleteQueue(@PathVariable("id") String id){
-	queueService.deleteQueue(id);
-}
+	@DeleteMapping("queue/{id}")
+	public void deleteQueue(@PathVariable("id") String id) {
+		queueService.deleteQueue(id);
+	}
 
 }
