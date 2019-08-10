@@ -1,5 +1,6 @@
 package com.dbs.table1.controller;
 
+<<<<<<< HEAD
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;

@@ -2,17 +2,22 @@ package com.dbs.table1.service;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import com.dbs.table1.model.Queue;
 
 public class QueueService {
 	
 	private static List<Queue> queues = new ArrayList<Queue>();
 	
+	DataUtil util = new DataUtil();
 	public boolean addQueue(Queue queue)
 	{
+		if(util.addQueue(queue.getId()))
+		{
 		queues.add(queue);
 		return true;
+		}
+		else
+			return false;
 		
 	}
 	

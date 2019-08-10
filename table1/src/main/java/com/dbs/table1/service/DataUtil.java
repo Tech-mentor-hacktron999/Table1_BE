@@ -31,5 +31,18 @@ public class DataUtil {
 		return true;
 	}
 	
-
+	public boolean addQueue(String queueId)
+	{
+		if(messageMap.containsKey(queueId))
+		{
+			System.out.println("queue id exists already "+queueId);
+			return false;
+			
+		}
+		else
+		{
+			messageMap.put(queueId, new ConcurrentLinkedQueue<Message>());
+			return true;
+		}
+	}
 }

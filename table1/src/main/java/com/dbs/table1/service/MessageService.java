@@ -16,7 +16,7 @@ public class MessageService {
 	
 	public static Map<String, ConcurrentLinkedQueue<Message>>  messageMap = new 
 			HashMap<String, ConcurrentLinkedQueue<Message>>();
-	
+
 	public boolean addMessage(String queueId, Message message) {
 		if(messageMap.containsKey(queueId)) {
 			return messageMap.get(queueId).add(message);
@@ -32,9 +32,7 @@ public class MessageService {
 		}else {
 			throw new ResourceNotFoundException("Queue Id not found " + queueId);
 		}
-		
 	}
-	
 	
 	public boolean deleteMessage(String queueId) {
 		if(messageMap.containsKey(queueId) ) {
