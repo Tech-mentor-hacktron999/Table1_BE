@@ -18,7 +18,7 @@ public class QueueService {
 		
 	}
 	
-	public boolean deleteQueue(Queue queue)
+	public boolean deleteQueue(String id)
 	{
 		queues.remove(queue);
 		return true;
