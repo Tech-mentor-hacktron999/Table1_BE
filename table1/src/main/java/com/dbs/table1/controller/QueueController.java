@@ -1,6 +1,5 @@
 package com.dbs.table1.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +19,7 @@ public class QueueController {
 	private QueueService queueService;
 
 	@GetMapping("queue/")
-	public List<Queue> addMessage(){
+	public List<Queue> getAllQueues(){
 		List<Queue> list = queueService.getAllQueues();
 		return list;
 	}
