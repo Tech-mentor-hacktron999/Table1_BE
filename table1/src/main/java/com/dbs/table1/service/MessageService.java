@@ -7,6 +7,26 @@ import com.dbs.table1.model.Message;
 public class MessageService {
 	
 	private static SynchronousQueue<Message> messageQueue = new SynchronousQueue<Message>(); 
+	
+	public boolean addMessage(String queuId, Message mesage) {
+		return false;
+		
+	}
+	
+	
+	public Message fetchMessage(String queuId) {
+		return null;
+		
+	}
+	
+	
+	public boolean deleteMessage(String queuId) {
+		
+		return false;
+		
+	}
+	
+	
 
 
 }
