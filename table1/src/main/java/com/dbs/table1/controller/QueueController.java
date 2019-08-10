@@ -19,7 +19,11 @@ public class QueueController {
 	private QueueService queueService;
 
 	@GetMapping("queue/")
+<<<<<<< HEAD
 	public List<Queue> getAllQueues(){
+=======
+	public List<Queue> getAllQueues() {
+>>>>>>> 8aca5e234cb6151e6c0aea03e2bb028062a7c692
 		List<Queue> list = queueService.getAllQueues();
 		return list;
 	}
