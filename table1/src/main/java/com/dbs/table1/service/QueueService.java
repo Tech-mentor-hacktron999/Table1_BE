@@ -20,7 +20,7 @@ public class QueueService {
 	
 	public boolean deleteQueue(String id)
 	{
-		queues.remove(queue);
+		queues.remove(id);
 		return true;
 		
 	}
