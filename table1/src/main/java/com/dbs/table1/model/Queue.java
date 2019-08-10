@@ -15,4 +15,17 @@ public class Queue {
 	private Date updatedAt;
 	
 
+	public boolean equals(Object o)
+	{
+		
+		if(o instanceof Queue)
+		{
+			Queue temp = (Queue)o;
+			return this.id.equals(temp.id);
+		}
+		
+		return false;
+		
+		
+	}
 }

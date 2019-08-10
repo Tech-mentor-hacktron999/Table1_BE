@@ -20,9 +20,14 @@ public class QueueService {
 	
 	public boolean deleteQueue(Queue queue)
 	{
-		queues.add(queue);
+		queues.remove(queue);
 		return true;
 		
+	}
+	
+	public List<Queue> getAllQueues()
+	{
+		return queues;
 	}
 	
 }
