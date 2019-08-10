@@ -22,11 +22,14 @@ public class MessageService {
 
 	public boolean addMessage(String queueId, Message message) {
 		if(messageMap.containsKey(queueId)) {
-			return messageMap.get(queueId).add(message);
-		}
-		else if(messageMap.get(queueId).size()==AppConstant.LENGTH_OF_QUEUE)
-		{
-			throw new MaxSizeReachedException("Queue is full "+queueId);
+			if(messageMap.get(queueId).size()==AppConstant.LENGTH_OF_QUEUE)
+			{
+				throw new MaxSizeReachedException("Queue is full "+queueId);
+			}
+			else
+			{
+				return messageMap.get(queueId).add(message);
+			}
 		}
 		else {
 			throw new ResourceNotFoundException("Queue Id not found " + queueId);
