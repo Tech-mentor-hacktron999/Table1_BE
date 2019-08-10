@@ -21,12 +21,13 @@ public class MessageService {
 			HashMap<String, ConcurrentLinkedQueue<Message>>();
 
 	public boolean addMessage(String queueId, Message message) {
-		if(messageMap.containsKey(queueId)) {
-			return messageMap.get(queueId).add(message);
-		}
-		else if(messageMap.get(queueId).size()==AppConstant.LENGTH_OF_QUEUE)
-		{
-			throw new MaxSizeReachedException("Queue is full "+queueId);
+		System.out.println(messageMap);
+		Message dbMessage = new Message(message.getPayload(),queueId);
+		if(messageMap.containsKey(queueId) ) {
+			if(messageMap.get(queueId).size()==AppConstant.LENGTH_OF_QUEUE) {
+				throw new MaxSizeReachedException("Queue is full "+queueId);
+			}
+			return messageMap.get(queueId).add(dbMessage);
 		}
 		else {
 			throw new ResourceNotFoundException("Queue Id not found " + queueId);

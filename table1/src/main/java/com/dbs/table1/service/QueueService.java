@@ -10,14 +10,13 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.dbs.table1.model.Message;
 import com.dbs.table1.model.Queue;
 import com.dbs.table1.model.QueueModel;
 
 @Service
 public class QueueService {
-	
-	@Autowired
-	DataUtil dataUtil;
+
 	@Autowired 
 	MessageService messageService;
 	
@@ -27,7 +26,7 @@ public class QueueService {
 	public boolean addQueue(QueueModel queue) {
 		String queueId = UUID.randomUUID().toString();
 		Queue dbQueue = new Queue(queue.getName(), queueId);
-		if(dataUtil.addQueue(queueId)) {
+		if(addQueue(queueId)) {
 			queueMap.put(queueId,dbQueue);
 			queues.add(dbQueue);
 			//MessageService.messageMap.putIfAbsent(queueId,new ConcurrentLinkedQueue<Message>())
@@ -49,4 +48,11 @@ public class QueueService {
 		return response;
 	}
 	
+	public boolean addQueue(String queueId) {
+		if(!MessageService.messageMap.containsKey(queueId)) {
+			MessageService.messageMap.put(queueId, new ConcurrentLinkedQueue<Message>());
+			return true;
+		}
+		return false;
+	}
 }

@@ -14,28 +14,7 @@ public class DataUtil {
 	public static Map<String, ConcurrentLinkedQueue<Message>>  messageMap = new 
 			HashMap<String, ConcurrentLinkedQueue<Message>>();
 	
-	public Message getMessageForAQueue(String queueId) {
-		if(messageMap.get(queueId) != null ) {
-			return messageMap.get(queueId).isEmpty()? null: messageMap.get(queueId).element();
-		}else {
-			return null;
-		}
-	}
 	
-	public boolean deleteMessageByQueueId(String queueId) {
-		if(messageMap.get(queueId) != null ) {
-			 if(!messageMap.get(queueId).isEmpty()) {
-				 messageMap.get(queueId).remove();
-			 }
-		}
-		return true;
-	}
 	
-	public boolean addQueue(String queueId) {
-		if(!messageMap.containsKey(queueId)) {
-			messageMap.put(queueId, new ConcurrentLinkedQueue<Message>());
-			return true;
-		}
-		return false;
-	}
+
 }
