@@ -7,6 +7,7 @@ import lombok.Data;
 
 @Data
 public class Message {
+	private String messageId;
 	private String payload;
 	private Date createdAt;
 	private Date updatedAt;
