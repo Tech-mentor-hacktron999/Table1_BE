@@ -2,10 +2,6 @@ package com.dbs.table1.service;
 
 import java.util.ArrayList;
 import java.util.List;
-<<<<<<< HEAD
-=======
-
->>>>>>> 8aca5e234cb6151e6c0aea03e2bb028062a7c692
 import com.dbs.table1.model.Queue;
 
 public class QueueService {
