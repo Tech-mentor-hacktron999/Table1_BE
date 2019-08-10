@@ -10,9 +10,9 @@ import com.dbs.table1.service.MessageService;
 
 @RestController
 public class MessageController {
-	
-@Autowired
-private MessageService messageService;
-	
+
+	@Autowired
+	private MessageService messageService;
+
 
 }

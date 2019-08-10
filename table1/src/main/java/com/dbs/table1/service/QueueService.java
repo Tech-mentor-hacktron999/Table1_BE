@@ -20,24 +20,8 @@ public class QueueService {
 	
 	public boolean deleteQueue(String id)
 	{
-		Queue temp = null;
-		for(Queue queue : queues)
-		{
-			if(queue.getId().equalsIgnoreCase(id))
-			{
-				temp = queue;
-				break;
-			}
-				
-		}
-		
-		if(temp==null)
-		return false;
-		else
-		{
-			queues.remove(temp);
-			return true;
-		}
+		queues.remove(queue);
+		return true;
 		
 	}
 	
