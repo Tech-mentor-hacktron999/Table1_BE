@@ -1,13 +1,18 @@
 package com.dbs.table1.controller;
 
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import com.dbs.table1.model.Message;
 import com.dbs.table1.service.MessageService;
-import com.dbs.table1.service.QueueService;
 
+@RunWith(SpringRunner.class)
+@SpringBootTest
 public class MessageControllerTest {
 	
 	private MessageService messageService;
