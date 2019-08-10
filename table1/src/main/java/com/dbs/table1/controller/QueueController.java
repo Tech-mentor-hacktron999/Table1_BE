@@ -20,7 +20,7 @@ public class QueueController {
 	private QueueService queueService;
 
 	@GetMapping("queue/")
-	public List<Queue> getAllQueues(){
+	public List<Queue> addMessage(){
 		List<Queue> list = queueService.getAllQueues();
 		return list;
 	}
