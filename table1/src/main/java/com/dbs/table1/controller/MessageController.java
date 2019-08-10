@@ -1,37 +1,38 @@
 package com.dbs.table1.controller;
 
-import java.util.List;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.dbs.table1.model.Message;
-import com.dbs.table1.model.Queue;
 import com.dbs.table1.service.MessageService;  
 
 @RestController
+@RequestMapping("/message")
 public class MessageController {
 
 	@Autowired
 	private MessageService messageService;
 
 	
-	@PostMapping("message/add")
-	public void addMessage(String queueId, Message message){
+	@PostMapping("/add")
+	public void addMessage(String queueId, @Valid Message message){
 		messageService.addMessage(queueId, message);
 	}
 	
-	@DeleteMapping("queue/{id}")
-	public void deleteMessage(String queueId){
+	@DeleteMapping("/{id}")
+	public void deleteMessage(@PathVariable(name = "id") String queueId){
 		messageService.deleteMessage(queueId);
 	}
 	
-	@GetMapping("queue/")
-	public void fetchMessage(String queueId){
+	@GetMapping("/{id}")
+	public void fetchMessage(@PathVariable(name = "id") String queueId){
 		messageService.fetchMessage(queueId);
 	}
 
