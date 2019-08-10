@@ -10,7 +10,6 @@ import lombok.Data;
 
 @Data
 public class Message {
-	@NotBlank
 	private String queueId;
 	private String messageId;
 	@NotBlank
@@ -19,6 +18,10 @@ public class Message {
 	private Date updatedAt;
 	private String status;
 	private long ttl;
+	
+	public Message() {
+		
+	}
 	
 	public Message(String payload,String queueId) {
 		this.queueId = queueId;

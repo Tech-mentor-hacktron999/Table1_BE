@@ -14,7 +14,7 @@ public class MessageService {
 	
 	//private static SynchronousQueue<Message> messageQueue = new SynchronousQueue<Message>(); 
 	
-	public static Map<String, ConcurrentLinkedQueue<Message>>  messageMap = new 
+	public static final Map<String, ConcurrentLinkedQueue<Message>>  messageMap = new 
 			HashMap<String, ConcurrentLinkedQueue<Message>>();
 
 	public boolean addMessage(String queueId, Message message) {
@@ -41,7 +41,6 @@ public class MessageService {
 		}else {
 			throw new ResourceNotFoundException("Queue Id not found " + queueId);
 		}
-		
 	}
 	
 	

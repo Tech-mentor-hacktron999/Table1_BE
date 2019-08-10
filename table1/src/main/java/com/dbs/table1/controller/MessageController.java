@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,8 +22,8 @@ public class MessageController {
 	private MessageService messageService;
 
 	
-	@PostMapping("/add")
-	public void addMessage(String queueId, @Valid Message message){
+	@PostMapping("/add/{id}")
+	public void addMessage(@PathVariable(name = "id") String queueId, @Valid @RequestBody Message message){
 		messageService.addMessage(queueId, message);
 	}
 	
@@ -32,8 +33,8 @@ public class MessageController {
 	}
 	
 	@GetMapping("/{id}")
-	public void fetchMessage(@PathVariable(name = "id") String queueId){
-		messageService.fetchMessage(queueId);
+	public Message fetchMessage(@PathVariable(name = "id") String queueId){
+		return messageService.fetchMessage(queueId);
 	}
 
 	
