@@ -18,16 +18,15 @@ public class QueueController {
 @Autowired
 private QueueService queueService;
 
-List<Queue> list = new ArrayList<Queue>();
-
 @GetMapping("queue/")
 public List<Queue> getAllQueues(){
+	List<Queue> list = queueService.getAllQueues();
 	return list;
 }
 
 @DeleteMapping("queue/{id}")
-public void getQueues(@PathVariable("id") String id){
-	
+public void deleteQueue(@PathVariable("id") String id){
+	queueService.deleteQueue(id);
 }
 
 }

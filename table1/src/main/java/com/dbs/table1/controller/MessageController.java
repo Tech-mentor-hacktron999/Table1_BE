@@ -13,9 +13,6 @@ public class MessageController {
 	
 @Autowired
 private MessageService messageService;
-	@GetMapping("queue/")
-	public void getQueues(){
-		
-	}
+	
 
 }
