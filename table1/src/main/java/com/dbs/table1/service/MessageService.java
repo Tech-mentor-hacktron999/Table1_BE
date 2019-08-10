@@ -8,19 +8,19 @@ public class MessageService {
 	
 	private static SynchronousQueue<Message> messageQueue = new SynchronousQueue<Message>(); 
 	
-	public boolean addMessage(String queueId, Message message) {
+	public boolean addMessage(String queuId, Message mesage) {
 		return false;
 		
 	}
 	
 	
-	public Message fetchMessage(String queueId) {
+	public Message fetchMessage(String queuId) {
 		return null;
 		
 	}
 	
 	
-	public boolean deleteMessage(String queueId) {
+	public boolean deleteMessage(String queuId) {
 		
 		return false;
 		
